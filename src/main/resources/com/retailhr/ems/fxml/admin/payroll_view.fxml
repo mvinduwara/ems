@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="14.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.retailhr.ems.controller.admin.PayrollViewController">
+
+    <HBox alignment="CENTER_LEFT" spacing="12.0">
+        <Label styleClass="section-title" text="Payroll"/>
+        <ComboBox fx:id="employeeFilter" promptText="Employee" HBox.hgrow="ALWAYS"/>
+        <Button onAction="#handleGenerate" styleClass="primary-button" text="+ Generate Payroll"/>
+    </HBox>
+
+    <TableView fx:id="payrollTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="employeeColumn" text="Employee" prefWidth="150.0"/>
+            <TableColumn fx:id="periodColumn" text="Period" prefWidth="180.0"/>
+            <TableColumn fx:id="daysWorkedColumn" text="Worked" prefWidth="70.0"/>
+            <TableColumn fx:id="daysLeaveColumn" text="Leave" prefWidth="70.0"/>
+            <TableColumn fx:id="overtimeColumn" text="OT Hrs" prefWidth="70.0"/>
+            <TableColumn fx:id="deductionsColumn" text="Deductions" prefWidth="100.0"/>
+            <TableColumn fx:id="bonusesColumn" text="Bonuses" prefWidth="100.0"/>
+            <TableColumn fx:id="netPayColumn" text="Net Pay" prefWidth="100.0"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="90.0"/>
+            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="180.0"/>
+        </columns>
+    </TableView>
+
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+</VBox>
