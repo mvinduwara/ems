@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.retailhr.ems.controller.EmployeeDashboardController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="topbar">
+            <padding>
+                <Insets bottom="12.0" left="20.0" right="20.0" top="12.0"/>
+            </padding>
+            <Label styleClass="topbar-title" text="My Dashboard"/>
+            <Label fx:id="welcomeLabel" styleClass="topbar-welcome"/>
+            <Button onAction="#handleLogout" styleClass="secondary-button" text="Logout"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="4.0" styleClass="sidebar">
+            <padding>
+                <Insets bottom="20.0" left="12.0" right="12.0" top="20.0"/>
+            </padding>
+            <Button maxWidth="Infinity" onAction="#showAttendance" styleClass="nav-button" text="My Attendance"/>
+            <Button maxWidth="Infinity" onAction="#showLeaveRequests" styleClass="nav-button" text="My Leave"/>
+            <Button maxWidth="Infinity" onAction="#showPayslips" styleClass="nav-button" text="My Payslips"/>
+            <Button maxWidth="Infinity" onAction="#showMyQrCode" styleClass="nav-button" text="My QR Badge"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox fx:id="contentArea" styleClass="content-area">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+        </VBox>
+    </center>
+</BorderPane>
