@@ -9,10 +9,14 @@ module com.retailhr.ems {
     requires webcam.capture;
     requires jbcrypt;
     requires org.slf4j;
+    requires jakarta.persistence;
+    requires org.hibernate.orm.core;
+    requires javafx.swing;
 
     opens com.retailhr.ems to javafx.fxml;
     opens com.retailhr.ems.controller to javafx.fxml;
     opens com.retailhr.ems.model.entity to javafx.fxml;
+    opens com.retailhr.ems.util to javafx.fxml;
 
     exports com.retailhr.ems;
 }
