@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.retailhr.ems.controller.admin.AttendanceViewController">
+
+    <VBox alignment="TOP_CENTER" spacing="12.0" styleClass="scanner-panel">
+        <Label styleClass="section-title" text="QR Scanner"/>
+
+        <StackPane fx:id="cameraContainer" styleClass="camera-container" />
+
+        <HBox alignment="CENTER" spacing="10.0">
+            <Button fx:id="startButton" onAction="#handleStart" styleClass="primary-button" text="Start Scanner"/>
+            <Button fx:id="stopButton" disable="true" onAction="#handleStop" styleClass="secondary-button" text="Stop Scanner"/>
+        </HBox>
+
+        <Label fx:id="statusLabel" styleClass="scanner-status" text="Scanner stopped"/>
+        <Label fx:id="lastScanLabel" styleClass="last-scan-label" wrapText="true"/>
+    </VBox>
+
+    <VBox spacing="12.0" styleClass="attendance-log-panel" HBox.hgrow="ALWAYS">
+        <Label styleClass="section-title" text="Today's Attendance"/>
+        <ListView fx:id="attendanceListView" VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+</HBox>
