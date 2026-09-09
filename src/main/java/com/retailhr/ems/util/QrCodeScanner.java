@@ -13,6 +13,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
+import com.google.zxing.ChecksumException;
+import com.google.zxing.FormatException;
 
 public class QrCodeScanner {
 
@@ -70,7 +72,7 @@ public class QrCodeScanner {
             BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
             Result result = reader.decode(bitmap, hints);
             return result.getText();
-        } catch (NotFoundException e) {
+        } catch (NotFoundException | ChecksumException | FormatException e) {
             return null;
         } finally {
             reader.reset();

@@ -26,8 +26,7 @@ public class AuditLog {
     @Column(name = "entity_id")
     private Integer entityId;
 
-    @Lob
-    @Column(name = "details")
+    @Column(name = "details", columnDefinition = "TEXT")
     private String details;
 
     @Column(name = "ip_address", length = 45)

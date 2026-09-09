@@ -3,6 +3,7 @@ package com.retailhr.ems.repository;
 import com.retailhr.ems.model.entity.Employee;
 import com.retailhr.ems.model.entity.LeaveRequest;
 import jakarta.persistence.EntityManager;
+import com.retailhr.ems.repository.LeaveTypeRepository;
 
 import java.util.List;
 

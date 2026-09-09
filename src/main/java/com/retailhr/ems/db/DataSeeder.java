@@ -5,7 +5,6 @@ import com.retailhr.ems.repository.*;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Optional;
 
 public class DataSeeder {

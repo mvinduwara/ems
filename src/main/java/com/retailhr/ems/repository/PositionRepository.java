@@ -1,8 +1,7 @@
-package com.retailhr.ems.controller.admin;
+package com.retailhr.ems.repository;
 
 import com.retailhr.ems.model.entity.Department;
 import com.retailhr.ems.model.entity.Position;
-import com.retailhr.ems.repository.GenericRepository;
 import jakarta.persistence.EntityManager;
 
 import java.util.List;

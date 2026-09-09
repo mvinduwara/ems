@@ -15,6 +15,10 @@ import javafx.scene.layout.GridPane;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import com.retailhr.ems.repository.DepartmentRepository;
+import com.retailhr.ems.repository.EmployeeRepository;
+import com.retailhr.ems.repository.PositionRepository;
+import com.retailhr.ems.repository.RoleRepository;
 
 public class EmployeeFormDialog extends Dialog<Employee> {
 
