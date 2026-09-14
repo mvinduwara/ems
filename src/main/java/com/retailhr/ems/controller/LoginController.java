@@ -69,6 +69,7 @@ public class LoginController {
                 EmsApplication.setRoot("fxml/employee_dashboard");
             }
         } catch (IOException e) {
+            e.printStackTrace();
             showError("Failed to load dashboard: " + e.getMessage());
         }
     }
