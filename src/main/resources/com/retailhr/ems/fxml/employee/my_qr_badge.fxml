@@ -20,5 +20,5 @@
 
     <Label fx:id="employeeCodeLabel" styleClass="badge-code"/>
 
-    <Button fx:id="saveButton" onAction="#handleSaveAsPng" styleClass="primary-button" text="Save as PNG"/>
+    <Button fx:id="saveButton" onAction="#handleSaveAsPng" styleClass="primary-button" text="⬇  Save as PNG"/>
 </VBox>

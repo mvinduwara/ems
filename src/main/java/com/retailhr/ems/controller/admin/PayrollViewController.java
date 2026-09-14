@@ -55,6 +55,10 @@ public class PayrollViewController {
 
     private final ObservableList<PayrollRecord> masterData = FXCollections.observableArrayList();
 
+    private final Button finalizeBtn = new Button("✓  Finalize");
+
+    private final Button payBtn = new Button("$  Mark Paid");
+
     @FXML
     private void initialize() {
         employeeColumn.setCellValueFactory(data ->
@@ -102,8 +106,8 @@ public class PayrollViewController {
 
     private void addActionButtons() {
         actionsColumn.setCellFactory(col -> new TableCell<>() {
-            private final Button finalizeBtn = new Button("Finalize");
-            private final Button payBtn = new Button("Mark Paid");
+            private final Button finalizeBtn = new Button("Finalize", new org.kordamp.ikonli.javafx.FontIcon("fea-check-circle"));
+            private final Button payBtn = new Button("Mark Paid", new org.kordamp.ikonli.javafx.FontIcon("fea-dollar-sign"));
             private final HBox box = new HBox(6.0, finalizeBtn, payBtn);
 
             {

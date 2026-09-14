@@ -17,7 +17,7 @@
             <Label styleClass="topbar-title" text="My Dashboard"/>
             <Label fx:id="welcomeLabel" styleClass="topbar-welcome"/>
             <Button fx:id="themeToggleButton" onAction="#handleToggleTheme" styleClass="theme-toggle-button" text="🌙"/>
-            <Button onAction="#handleLogout" styleClass="secondary-button" text="Logout"/>
+            <Button onAction="#handleLogout" styleClass="secondary-button" text="⏻  Logout"/>
         </HBox>
     </top>
 
@@ -26,10 +26,10 @@
             <padding>
                 <Insets bottom="20.0" left="12.0" right="12.0" top="20.0"/>
             </padding>
-            <Button maxWidth="Infinity" onAction="#showAttendance" styleClass="nav-button" text="My Attendance"/>
-            <Button maxWidth="Infinity" onAction="#showLeaveRequests" styleClass="nav-button" text="My Leave"/>
-            <Button maxWidth="Infinity" onAction="#showPayslips" styleClass="nav-button" text="My Payslips"/>
-            <Button maxWidth="Infinity" onAction="#showMyQrCode" styleClass="nav-button" text="My QR Badge"/>
+            <Button maxWidth="Infinity" onAction="#showAttendance" styleClass="nav-button" text="🕐  My Attendance"/>
+            <Button maxWidth="Infinity" onAction="#showLeaveRequests" styleClass="nav-button" text="📅  My Leave"/>
+            <Button maxWidth="Infinity" onAction="#showPayslips" styleClass="nav-button" text="$  My Payslips"/>
+            <Button maxWidth="Infinity" onAction="#showMyQrCode" styleClass="nav-button" text="▦  My QR Badge"/>
         </VBox>
     </left>
 

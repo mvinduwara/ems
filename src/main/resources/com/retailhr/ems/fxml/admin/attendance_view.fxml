@@ -14,11 +14,11 @@
     <VBox alignment="TOP_CENTER" spacing="12.0" styleClass="scanner-panel">
         <Label styleClass="section-title" text="QR Scanner"/>
 
-        <StackPane fx:id="cameraContainer" styleClass="camera-container" />
+        <StackPane fx:id="cameraContainer" styleClass="camera-container"/>
 
         <HBox alignment="CENTER" spacing="10.0">
-            <Button fx:id="startButton" onAction="#handleStart" styleClass="primary-button" text="Start Scanner"/>
-            <Button fx:id="stopButton" disable="true" onAction="#handleStop" styleClass="secondary-button" text="Stop Scanner"/>
+            <Button fx:id="startButton" onAction="#handleStart" styleClass="primary-button" text="📷  Start Scanner"/>
+            <Button fx:id="stopButton" disable="true" onAction="#handleStop" styleClass="secondary-button" text="⏹  Stop Scanner"/>
         </HBox>
 
         <Label fx:id="statusLabel" styleClass="scanner-status" text="Scanner stopped"/>

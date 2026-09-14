@@ -17,7 +17,7 @@
     <HBox alignment="CENTER_LEFT" spacing="12.0">
         <Label styleClass="section-title" text="Payroll"/>
         <ComboBox fx:id="employeeFilter" promptText="Employee" HBox.hgrow="ALWAYS"/>
-        <Button onAction="#handleGenerate" styleClass="primary-button" text="+ Generate Payroll"/>
+        <Button onAction="#handleGenerate" styleClass="primary-button" text="+  Generate Payroll"/>
     </HBox>
 
     <TableView fx:id="payrollTable" VBox.vgrow="ALWAYS">

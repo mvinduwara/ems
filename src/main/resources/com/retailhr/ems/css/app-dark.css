@@ -372,3 +372,17 @@
     -fx-text-fill: -color-text;
     -fx-font-family: "Poppins SemiBold";
 }
+
+.nav-button FontIcon,
+.secondary-button FontIcon,
+.table-action-button FontIcon {
+    -fx-icon-color: -color-text;
+}
+
+.primary-button FontIcon {
+    -fx-icon-color: white;
+}
+
+.table-action-button-danger FontIcon {
+    -fx-icon-color: -color-danger;
+}

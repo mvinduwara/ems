@@ -44,6 +44,8 @@ public class MyLeaveController {
 
     private final ObservableList<LeaveRequest> data = FXCollections.observableArrayList();
 
+    private final Button cancelBtn = new Button("✕  Cancel");
+
     @FXML
     private void initialize() {
         leaveTypeColumn.setCellValueFactory(d ->

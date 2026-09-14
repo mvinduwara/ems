@@ -53,6 +53,10 @@ public class LeaveApprovalsController {
     private final ObservableList<LeaveRequest> masterData = FXCollections.observableArrayList();
     private FilteredList<LeaveRequest> filteredData;
 
+    private final Button approveBtn = new Button("✓  Approve");
+
+    private final Button rejectBtn = new Button("✕  Reject");
+
     @FXML
     private void initialize() {
         employeeColumn.setCellValueFactory(data ->
@@ -88,8 +92,8 @@ public class LeaveApprovalsController {
 
     private void addActionButtons() {
         actionsColumn.setCellFactory(col -> new TableCell<>() {
-            private final Button approveBtn = new Button("Approve");
-            private final Button rejectBtn = new Button("Reject");
+            private final Button approveBtn = new Button("Approve", new org.kordamp.ikonli.javafx.FontIcon("fea-check"));
+            private final Button rejectBtn = new Button("Reject", new org.kordamp.ikonli.javafx.FontIcon("fea-x"));
             private final HBox box = new HBox(6.0, approveBtn, rejectBtn);
 
             {

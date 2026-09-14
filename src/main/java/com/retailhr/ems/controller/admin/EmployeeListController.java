@@ -56,6 +56,8 @@ public class EmployeeListController {
 
     private final ObservableList<Employee> masterData = FXCollections.observableArrayList();
     private FilteredList<Employee> filteredData;
+    private final Button editBtn = new Button("✎  Edit");
+    private final Button statusBtn = new Button("↻  Status");
 
     @FXML
     private void initialize() {
@@ -87,8 +89,8 @@ public class EmployeeListController {
 
     private void addActionButtons() {
         actionsColumn.setCellFactory(col -> new TableCell<>() {
-            private final Button editBtn = new Button("Edit");
-            private final Button statusBtn = new Button("Status");
+            private final Button editBtn = new Button("Edit", new org.kordamp.ikonli.javafx.FontIcon("fea-edit-2"));
+            private final Button statusBtn = new Button("Status", new org.kordamp.ikonli.javafx.FontIcon("fea-refresh-cw"));
             private final HBox box = new HBox(6.0, editBtn, statusBtn);
 
             {
