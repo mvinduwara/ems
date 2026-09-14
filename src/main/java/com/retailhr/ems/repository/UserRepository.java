@@ -15,7 +15,7 @@ public class UserRepository extends GenericRepository<User, Integer> {
     public Optional<User> findByUsername(String username) {
         try (EntityManager em = entityManager()) {
             User user = em.createQuery(
-                            "SELECT u FROM User u WHERE u.username = :username", User.class)
+                            "SELECT u FROM User u JOIN FETCH u.role WHERE u.username = :username", User.class)
                     .setParameter("username", username)
                     .getSingleResult();
             return Optional.of(user);
