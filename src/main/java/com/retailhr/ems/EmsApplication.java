@@ -1,6 +1,7 @@
 package com.retailhr.ems;
 
 import com.retailhr.ems.db.DataSeeder;
+import com.retailhr.ems.util.ThemeManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,7 +10,6 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class EmsApplication extends Application {
 
@@ -22,9 +22,7 @@ public class EmsApplication extends Application {
         primaryStage = stage;
         Parent root = loadFxml("fxml/login");
         Scene scene = new Scene(root, 1000, 650);
-        scene.getStylesheets().add(
-                Objects.requireNonNull(EmsApplication.class.getResource("css/app.css")).toExternalForm()
-        );
+        ThemeManager.applyCurrentTheme(scene);
         stage.setTitle("Employee Management System");
         stage.setScene(scene);
         stage.setMinWidth(1000);
@@ -49,7 +47,9 @@ public class EmsApplication extends Application {
     }
 
     public static void setRoot(String fxmlName) throws IOException {
-        primaryStage.getScene().setRoot(loadFxml(fxmlName));
+        Parent root = loadFxml(fxmlName);
+        primaryStage.getScene().setRoot(root);
+        ThemeManager.applyCurrentTheme(primaryStage.getScene());
     }
 
     public static Stage getPrimaryStage() {

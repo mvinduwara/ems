@@ -1,9 +1,11 @@
 package com.retailhr.ems.controller;
 
 import com.retailhr.ems.EmsApplication;
+import com.retailhr.ems.util.ThemeManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
@@ -17,12 +19,26 @@ public class AdminDashboardController {
     @FXML
     private VBox contentArea;
 
+    @FXML
+    private Button themeToggleButton;
+
     private Object currentSubController;
 
     @FXML
     private void initialize() {
         welcomeLabel.setText("Welcome, " + SessionContext.getCurrentUser().getUsername());
+        updateThemeToggleIcon();
         showEmployees();
+    }
+
+    @FXML
+    private void handleToggleTheme() {
+        ThemeManager.toggleTheme(themeToggleButton.getScene());
+        updateThemeToggleIcon();
+    }
+
+    private void updateThemeToggleIcon() {
+        themeToggleButton.setText(ThemeManager.isDarkMode() ? "☀" : "🌙");
     }
 
     @FXML

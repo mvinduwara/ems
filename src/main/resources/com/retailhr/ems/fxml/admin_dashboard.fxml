@@ -16,6 +16,7 @@
             </padding>
             <Label styleClass="topbar-title" text="Admin Dashboard"/>
             <Label fx:id="welcomeLabel" styleClass="topbar-welcome"/>
+            <Button fx:id="themeToggleButton" onAction="#handleToggleTheme" styleClass="theme-toggle-button" text="🌙"/>
             <Button onAction="#handleLogout" styleClass="secondary-button" text="Logout"/>
         </HBox>
     </top>

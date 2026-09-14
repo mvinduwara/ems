@@ -1,0 +1,374 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Poppins Medium";
+    src: url("fonts/Poppins-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Poppins SemiBold";
+    src: url("fonts/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "Poppins Bold";
+    src: url("fonts/Poppins-Bold.ttf");
+}
+
+* {
+    -fx-font-family: "Poppins";
+    -color-bg: #121212;
+    -color-surface: #1e1e1e;
+    -color-border: #333333;
+    -color-text: #f0f0f0;
+    -color-text-muted: #9a9a9a;
+    -color-accent: #f0f0f0;
+    -color-accent-hover: #d0d0d0;
+    -color-danger: #e5564a;
+    -color-danger-hover: #ff6f63;
+}
+
+.root {
+    -fx-background-color: -color-bg;
+    -fx-text-fill: -color-text;
+    -fx-font-size: 13px;
+}
+
+.login-root {
+    -fx-background-color: -color-bg;
+}
+
+.login-title {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 22px;
+    -fx-text-fill: -color-text;
+}
+
+.login-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-text-muted;
+}
+
+.login-field {
+    -fx-pref-width: 280px;
+    -fx-pref-height: 38px;
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 0 12 0 12;
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-text;
+    -fx-prompt-text-fill: -color-text-muted;
+}
+
+.login-field:focused {
+    -fx-border-color: -color-accent;
+}
+
+.error-label {
+    -fx-text-fill: -color-danger;
+    -fx-font-size: 12px;
+}
+
+.primary-button {
+    -fx-background-color: -color-accent;
+    -fx-text-fill: #121212;
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 13px;
+    -fx-padding: 9 20 9 20;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: -color-accent-hover;
+}
+
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-text;
+    -fx-font-size: 13px;
+    -fx-padding: 8 16 8 16;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: -color-surface;
+}
+
+.theme-toggle-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-text;
+    -fx-font-size: 16px;
+    -fx-padding: 6 12 6 12;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-cursor: hand;
+    -fx-min-width: 36px;
+}
+
+.theme-toggle-button:hover {
+    -fx-background-color: -color-surface;
+}
+
+.table-action-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-text;
+    -fx-font-size: 11px;
+    -fx-padding: 4 10 4 10;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-cursor: hand;
+}
+
+.table-action-button:hover {
+    -fx-background-color: -color-surface;
+}
+
+.table-action-button:disabled {
+    -fx-opacity: 0.35;
+}
+
+.table-action-button-danger {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-danger;
+    -fx-font-size: 11px;
+    -fx-padding: 4 10 4 10;
+    -fx-border-color: -color-danger;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-cursor: hand;
+}
+
+.table-action-button-danger:hover {
+    -fx-background-color: derive(-color-danger, -60%);
+}
+
+.table-action-button-danger:disabled {
+    -fx-opacity: 0.35;
+}
+
+.topbar {
+    -fx-background-color: -color-bg;
+    -fx-border-color: transparent transparent -color-border transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.topbar-title {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 16px;
+    -fx-text-fill: -color-text;
+}
+
+.topbar-welcome {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-text-muted;
+    -fx-padding: 0 0 0 8;
+    -fx-alignment: center-left;
+    -fx-hgrow: always;
+}
+
+.sidebar {
+    -fx-background-color: -color-surface;
+    -fx-border-color: transparent -color-border transparent transparent;
+    -fx-border-width: 0 1 0 0;
+    -fx-pref-width: 190px;
+    -fx-min-width: 190px;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-text;
+    -fx-font-size: 13px;
+    -fx-alignment: center-left;
+    -fx-padding: 10 14 10 14;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: derive(-color-border, 20%);
+}
+
+.content-area {
+    -fx-background-color: -color-bg;
+}
+
+.section-title {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 17px;
+    -fx-text-fill: -color-text;
+}
+
+.summary-bar {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 10 16 10 16;
+}
+
+.summary-stat {
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-text;
+}
+
+.scanner-panel {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 20px;
+    -fx-pref-width: 380px;
+    -fx-min-width: 380px;
+}
+
+.camera-container {
+    -fx-background-color: #000000;
+    -fx-pref-width: 340px;
+    -fx-pref-height: 260px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.scanner-status {
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-text-muted;
+}
+
+.last-scan-label {
+    -fx-font-family: "Poppins Medium";
+    -fx-font-size: 13px;
+    -fx-text-alignment: center;
+    -fx-max-width: 320px;
+}
+
+.attendance-log-panel {
+    -fx-background-color: -color-bg;
+}
+
+.badge-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-text-muted;
+}
+
+.badge-code {
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 14px;
+    -fx-text-fill: -color-text;
+    -fx-padding: 4 12 4 12;
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 4px;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 4px 4px 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -color-border transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: -color-text;
+    -fx-font-family: "Poppins SemiBold";
+    -fx-font-size: 12px;
+}
+
+.table-row-cell {
+    -fx-background-color: -color-bg;
+    -fx-border-color: transparent transparent -color-border transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: -color-surface;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: derive(-color-accent, -70%);
+}
+
+.table-view .table-cell {
+    -fx-text-fill: -color-text;
+    -fx-font-size: 12px;
+    -fx-padding: 6 10 6 10;
+}
+
+.text-field, .password-field, .text-area, .combo-box, .date-picker {
+    -fx-background-color: -color-surface;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-text;
+    -fx-prompt-text-fill: -color-text-muted;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused,
+.combo-box:focused, .date-picker:focused {
+    -fx-border-color: -color-accent;
+}
+
+.list-view {
+    -fx-background-color: -color-bg;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+}
+
+.list-cell {
+    -fx-background-color: -color-bg;
+    -fx-text-fill: -color-text;
+    -fx-font-size: 12px;
+    -fx-padding: 8 10 8 10;
+}
+
+.list-cell:odd {
+    -fx-background-color: -color-surface;
+}
+
+.list-cell:selected {
+    -fx-background-color: derive(-color-accent, -70%);
+}
+
+.dialog-pane {
+    -fx-background-color: -color-bg;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: -color-surface;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: -color-text;
+    -fx-font-family: "Poppins SemiBold";
+}
