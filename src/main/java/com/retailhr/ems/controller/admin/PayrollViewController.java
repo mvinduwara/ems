@@ -84,6 +84,8 @@ public class PayrollViewController {
 
         addActionButtons();
 
+        payrollTable.setPlaceholder(new Label("No payroll records for this employee yet."));
+
         employeeFilter.setConverter(new javafx.util.StringConverter<>() {
             @Override
             public String toString(Employee e) {

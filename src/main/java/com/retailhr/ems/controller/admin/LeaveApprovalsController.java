@@ -53,9 +53,8 @@ public class LeaveApprovalsController {
     private final ObservableList<LeaveRequest> masterData = FXCollections.observableArrayList();
     private FilteredList<LeaveRequest> filteredData;
 
-    private final Button approveBtn = new Button("✓  Approve");
-
-    private final Button rejectBtn = new Button("✕  Reject");
+    private final Button approveBtn = new Button("Approve", com.retailhr.ems.util.IconFactory.check(12));
+    private final Button rejectBtn = new Button("Reject", com.retailhr.ems.util.IconFactory.x(12));
 
     @FXML
     private void initialize() {
@@ -79,6 +78,8 @@ public class LeaveApprovalsController {
             String reviewer = request.getReviewedBy() == null ? "—" : request.getReviewedBy().getUsername();
             return new javafx.beans.property.SimpleStringProperty(reviewer);
         });
+
+        leaveTable.setPlaceholder(new Label("No leave requests match this filter."));
 
         addActionButtons();
 

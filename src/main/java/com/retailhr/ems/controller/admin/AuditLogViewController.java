@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -47,7 +48,7 @@ public class AuditLogViewController {
     private static final int LOAD_LIMIT = 500;
 
     private final ObservableList<AuditLog> masterData = FXCollections.observableArrayList();
-    private FilteredList<AuditLog> filteredData;
+    private final FilteredList<AuditLog> filteredData = new FilteredList<>(masterData, a -> true);
 
     @FXML
     private void initialize() {
@@ -67,6 +68,8 @@ public class AuditLogViewController {
                 new javafx.beans.property.SimpleStringProperty(
                         d.getValue().getDetails() == null ? "" : d.getValue().getDetails()));
 
+        auditTable.setPlaceholder(new Label("No audit activity recorded yet."));
+        auditTable.setItems(filteredData);
         searchField.textProperty().addListener((obs, oldVal, newVal) -> applyFilters());
         entityFilter.valueProperty().addListener((obs, oldVal, newVal) -> applyFilters());
 
@@ -85,8 +88,6 @@ public class AuditLogViewController {
         entityFilter.setItems(entities);
         entityFilter.setValue("ALL");
 
-        filteredData = new FilteredList<>(masterData, a -> true);
-        auditTable.setItems(filteredData);
         applyFilters();
     }
 

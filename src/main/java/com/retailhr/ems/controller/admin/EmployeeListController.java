@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
+import com.retailhr.ems.util.IconFactory;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -52,10 +53,13 @@ public class EmployeeListController {
     @FXML
     private TableColumn<Employee, Void> actionsColumn;
 
+    @FXML
+    private Button addEmployeeButton;
+
     private static final DateTimeFormatter DATE_FMT = DateTimeFormatter.ofPattern("dd MMM yyyy");
 
     private final ObservableList<Employee> masterData = FXCollections.observableArrayList();
-    private FilteredList<Employee> filteredData;
+    private final FilteredList<Employee> filteredData = new FilteredList<>(masterData, e -> true);
     private final Button editBtn = new Button("✎  Edit");
     private final Button statusBtn = new Button("↻  Status");
 
@@ -75,6 +79,9 @@ public class EmployeeListController {
                 new javafx.beans.property.SimpleStringProperty(data.getValue().getDateHired().format(DATE_FMT)));
 
         addActionButtons();
+        employeeTable.setItems(filteredData);
+        addEmployeeButton.setGraphic(IconFactory.plusCircle(14));
+        employeeTable.setPlaceholder(new Label("No employees found. Click \"+ Add Employee\" to onboard your first one."));
 
         statusFilter.setItems(FXCollections.observableArrayList(
                 "ALL", "ACTIVE", "ON_LEAVE", "SUSPENDED", "TERMINATED"));
@@ -120,8 +127,6 @@ public class EmployeeListController {
         departmentFilter.setItems(departments);
         departmentFilter.setValue("ALL");
 
-        filteredData = new FilteredList<>(masterData, e -> true);
-        employeeTable.setItems(filteredData);
         applyFilters();
     }
 

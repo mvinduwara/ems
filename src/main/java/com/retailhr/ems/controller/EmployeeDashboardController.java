@@ -8,7 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-
+import com.retailhr.ems.util.IconFactory;
 import java.io.IOException;
 
 public class EmployeeDashboardController {
@@ -23,13 +23,6 @@ public class EmployeeDashboardController {
     private Button themeToggleButton;
 
     private Object currentSubController;
-
-    @FXML
-    private void initialize() {
-        welcomeLabel.setText("Welcome, " + SessionContext.getCurrentUser().getUsername());
-        updateThemeToggleIcon();
-        showAttendance();
-    }
 
     @FXML
     private void handleToggleTheme() {
@@ -59,6 +52,29 @@ public class EmployeeDashboardController {
     @FXML
     private void showMyQrCode() {
         loadIntoContent("fxml/employee/my_qr_badge");
+    }
+
+    @FXML
+    private Button logoutButton;
+    @FXML
+    private Button attendanceNavButton;
+    @FXML
+    private Button leaveNavButton;
+    @FXML
+    private Button payslipsNavButton;
+    @FXML
+    private Button qrNavButton;
+
+    @FXML
+    private void initialize() {
+        welcomeLabel.setText("Welcome, " + SessionContext.getCurrentUser().getUsername());
+        updateThemeToggleIcon();
+        logoutButton.setGraphic(IconFactory.logout(14));
+        attendanceNavButton.setGraphic(IconFactory.clock(16));
+        leaveNavButton.setGraphic(IconFactory.calendar(16));
+        payslipsNavButton.setGraphic(IconFactory.dollar(16));
+        qrNavButton.setGraphic(IconFactory.grid(16));
+        showAttendance();
     }
 
     @FXML

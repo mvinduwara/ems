@@ -19,7 +19,7 @@
         <TextField fx:id="searchField" promptText="Search by name or code" HBox.hgrow="ALWAYS"/>
         <ComboBox fx:id="statusFilter" promptText="Status"/>
         <ComboBox fx:id="departmentFilter" promptText="Department"/>
-        <Button onAction="#handleAddEmployee" styleClass="primary-button" text="+ Add Employee"/>
+        <Button fx:id="addEmployeeButton" onAction="#handleAddEmployee" styleClass="primary-button" text="+ Add Employee"/>
     </HBox>
 
     <TableView fx:id="employeeTable" VBox.vgrow="ALWAYS">

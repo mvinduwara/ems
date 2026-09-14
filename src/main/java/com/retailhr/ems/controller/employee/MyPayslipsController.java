@@ -69,6 +69,8 @@ public class MyPayslipsController {
         statusColumn.setCellValueFactory(d ->
                 new javafx.beans.property.SimpleStringProperty(d.getValue().getStatus().name()));
 
+        payslipTable.setPlaceholder(new Label("No payslips generated for you yet."));
+
         addActionButtons();
         loadData();
     }

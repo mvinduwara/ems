@@ -65,6 +65,8 @@ public class MyLeaveController {
                 new javafx.beans.property.SimpleStringProperty(
                         d.getValue().getReviewComment() == null ? "" : d.getValue().getReviewComment()));
 
+        leaveTable.setPlaceholder(new Label("You haven't submitted any leave requests."));
+
         addActionButtons();
         loadData();
     }

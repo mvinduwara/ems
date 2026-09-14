@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import com.retailhr.ems.util.IconFactory;
 
 import java.io.IOException;
 
@@ -25,9 +26,28 @@ public class AdminDashboardController {
     private Object currentSubController;
 
     @FXML
+    private Button logoutButton;
+    @FXML
+    private Button employeesNavButton;
+    @FXML
+    private Button attendanceNavButton;
+    @FXML
+    private Button leaveNavButton;
+    @FXML
+    private Button payrollNavButton;
+    @FXML
+    private Button auditNavButton;
+
+    @FXML
     private void initialize() {
         welcomeLabel.setText("Welcome, " + SessionContext.getCurrentUser().getUsername());
         updateThemeToggleIcon();
+        logoutButton.setGraphic(IconFactory.logout(14));
+        employeesNavButton.setGraphic(IconFactory.users(16));
+        attendanceNavButton.setGraphic(IconFactory.clock(16));
+        leaveNavButton.setGraphic(IconFactory.checkSquare(16));
+        payrollNavButton.setGraphic(IconFactory.dollar(16));
+        auditNavButton.setGraphic(IconFactory.document(16));
         showEmployees();
     }
 
@@ -95,4 +115,6 @@ public class AdminDashboardController {
         }
         currentSubController = null;
     }
+
+
 }

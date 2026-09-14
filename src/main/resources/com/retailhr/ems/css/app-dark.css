@@ -386,3 +386,14 @@
 .table-action-button-danger FontIcon {
     -fx-icon-color: -color-danger;
 }
+.icon-shape {
+    -fx-stroke: -color-text;
+}
+
+.primary-button .icon-shape {
+    -fx-stroke: white;
+}
+
+.table-action-button-danger .icon-shape {
+    -fx-stroke: -color-danger;
+}
